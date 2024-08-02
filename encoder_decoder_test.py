@@ -62,7 +62,7 @@ def test_encode_text_changed_words(endec, original_text, changed_words):
 
     _, text, original_shuffled_words = encoded_text.split(endec.separator)
 
-    assert sorted(changed_words) == sorted(original_shuffled_words.split())
+    assert sorted(changed_words) == original_shuffled_words.split()
 
 
 @pytest.mark.parametrize("shuffled, original_words, decoded", (

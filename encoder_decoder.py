@@ -1,3 +1,10 @@
+"""
+Encoder and Decoder. For each original word in the original text, leave the first and last character of it in that
+position, but shuffle (permutate) all the characters in the middle of the word. To make decoding by a
+machine possible, your encoder shall also output a sorted list of original words (only
+include words that got shuffled, not text that did not).
+"""
+
 import random
 import re
 from typing import List
@@ -20,7 +27,7 @@ class EnDec:
                 changed_strings_list.append(t)
 
         encoded_text = ''.join(encoded_list)
-        changed_strings = ' '.join(set(changed_strings_list))
+        changed_strings = ' '.join((sorted(set(changed_strings_list))))
 
         final = f"{self.separator}{encoded_text}{self.separator}{changed_strings}"
         return final
