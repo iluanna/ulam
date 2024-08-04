@@ -14,6 +14,7 @@ def test_encoder_initialization(endec):
 
 
 @pytest.mark.parametrize("original, after_shuffle", (
+        ("", ""),
         ("a", "a"),
         ("że", "że"),
         ("bit", "bit"),
@@ -45,8 +46,11 @@ def test_isolate_tokens(endec, text, isolated):
     assert endec.isolate_tokens(text) == isolated
 
 
-def test_encode_text_format(endec):
-    original = "To jest oryginalny tekst!"
+@pytest.mark.parametrize("original", (
+        ("To jest oryginalny tekst!"),
+        ("")
+))
+def test_encode_text_format(endec, original):
     encoded = endec.encode_text(original)
     reg = re.compile(rf"{endec.separator}\s*.*?\s*{endec.separator}\s*.*?")
     assert bool(reg.fullmatch(encoded))
@@ -121,10 +125,9 @@ def test_decode_text_allow_mistake(endec):
 
 
 
-
-
-
-
-
-
-
+# TODO: add test with "testowy testowy testowy" ---> every word can be encoded in diffrerent way (?)
+"""
+readme
+flask-examples
+github actions
+"""
