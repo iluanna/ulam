@@ -122,12 +122,3 @@ def test_decode_text_allow_mistake(endec):
     ]
 
     assert decoded in valid_combinations
-
-
-
-# TODO: add test with "testowy testowy testowy" ---> every word can be encoded in diffrerent way (?)
-"""
-readme
-flask-examples
-github actions
-"""
