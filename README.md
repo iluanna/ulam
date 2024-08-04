@@ -5,7 +5,7 @@
 First, clone the repository:
 
 ```
-git clone git@github.com:greyli/flask-examples.git
+git clone git@github.com:iluanna/ulam.git
 ```
 
 Then change into the ulam folder:
