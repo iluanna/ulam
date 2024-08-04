@@ -1,16 +1,13 @@
-"""
-Encoder and Decoder. For each original word in the original text, leave the first and last character of it in that
-position, but shuffle (permutate) all the characters in the middle of the word. To make decoding by a
-machine possible, your encoder shall also output a sorted list of original words (only
-include words that got shuffled, not text that did not).
-"""
-
 import random
 import re
 from typing import List
 
 
 class EnDec:
+    """
+    Encoder and Decoder. For each original word in the original text, leaves the first and last character of it in that
+    position, but shuffles (permutate) all the characters in the middle of the word. Encoder output contains encoded text (with shuffled words) and a sorted list of original words (only words that got shuffled).
+    """
     def __init__(self):
         self.separator = '\n-weird-\n'
     
@@ -86,17 +83,3 @@ class EnDec:
         tokens = tokenize_re.findall(text)
         tokens = [match[0] for match in tokens]
         return tokens
-
-
-if __name__ == "__main__":
-    #original = "To jest oryginalny tekst: Żółć. You've been there (not you). My mail: anna@gmail.com"
-    #original = "This is a long looong test sentence,\n with some big (biiiiig) words!"
-    #original = "To jest ten oryginalny tekst: Żółć. You're welcome. I'm not."
-    original = "To jest bark, to jest brak"
-
-    endec = EnDec()
-    encoded_final = endec.encode_text(original)
-    print(encoded_final)
-
-    decoded_final = endec.decode_text(encoded_final)
-    print(decoded_final)
