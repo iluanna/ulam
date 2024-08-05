@@ -7,7 +7,30 @@ Encoder output contains:
 2. encoded text (with shuffled words)
 3. separator
 4. sorted list of original words (only words that got shuffled). 
-    
+
+### Example:
+
+Original Text (this is a single string formatted nicely for better viewing!):
+```
+'This is a long looong test sentence,\n'
+'with some big (biiiiig) words!'
+```
+
+Encoded Text:
+```
+'\n—weird—\n'
+'Tihs is a lnog loonog tset sntceene,\n'
+'wtih smoe big (biiiiig) wdros!'
+'\n—weird—\n'
+'long looong sentence some test This with words'
+```
+
+Decoded Text:
+```
+'This is a long looong test sentence,\n'
+'with some big (biiiiig) words!'
+```
+
 
 ## Running the app
 
