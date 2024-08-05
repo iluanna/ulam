@@ -1,5 +1,14 @@
 # WeirdText - Encoder and Decoder
 
+## WeirdText
+For each original word in the original text, leaves the first and last character of it in that position, but shuffles (permutate) all the characters in the middle of the word.
+Encoder output contains:
+1. separator
+2. encoded text (with shuffled words)
+3. separator
+4. sorted list of original words (only words that got shuffled). 
+    
+
 ## Running the app
 
 First, clone the repository:
